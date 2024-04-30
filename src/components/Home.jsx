@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Formatable from './Formatable';
 
-axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL;
+axios.defaults.baseURL = "https://rablo-assignment.onrender.com";
 
 function Home() {
   const [addSection, setAddSection] = useState(false);
@@ -33,7 +33,7 @@ function Home() {
     if(!token) {
       navigate('/login');
     }
-    console.log(process.env.REACT_APP_BACKEND_URL)
+    // console.log(process.env.REACT_APP_BACKEND_URL)
   },[navigate]);
 
   const handleOnChange = (e) => {
@@ -59,7 +59,7 @@ function Home() {
     const fetchData = await axios.get('/');
     if(fetchData.data.success){
       setDataList(fetchData.data.data);
-      console.log(fetchData.data.data);
+    //   console.log(fetchData.data.data);
     }
   }
 
@@ -106,7 +106,7 @@ function Home() {
       rating: item.rating,
       company: item.company
     });
-    
+
     setUpdateSection(true);
   }
 
