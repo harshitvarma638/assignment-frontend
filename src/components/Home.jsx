@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Formatable from './Formatable';
 
-axios.defaults.baseURL = 'http://localhost:8000';
+axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL;
 
 function Home() {
   const [addSection, setAddSection] = useState(false);
@@ -33,7 +33,8 @@ function Home() {
     if(!token) {
       navigate('/login');
     }
-  },[]);
+    console.log(process.env.REACT_APP_BACKEND_URL)
+  },[navigate]);
 
   const handleOnChange = (e) => {
     const {name, value} = e.target;

@@ -1,8 +1,8 @@
-import {React, useEffect, useState} from 'react';
+import {React, useEffect} from 'react';
 import {Link,useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:8000';
+axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL;
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -12,7 +12,7 @@ const Signup = () => {
         if(token) {
             navigate('/home');
         }
-    },[]);
+    },[navigate]);
 
     const handleSignup = async(e) => {
         e.preventDefault();

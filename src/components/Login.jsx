@@ -3,7 +3,7 @@ import '../App.css';
 import {Link,useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:8000';
+axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL;
 
 const Login = () => {
     const navigate = useNavigate();
@@ -13,7 +13,7 @@ const Login = () => {
         if(token) {
             navigate('/home');
         }
-    },[]);
+    },[navigate]);
 
     const handleLogin = async(e) => {
         e.preventDefault();
