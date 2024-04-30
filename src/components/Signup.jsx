@@ -2,7 +2,7 @@ import {React, useEffect} from 'react';
 import {Link,useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
-axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL;
+axios.defaults.baseURL = "https://rablo-assignment.onrender.com";
 
 const Signup = () => {
     const navigate = useNavigate();
