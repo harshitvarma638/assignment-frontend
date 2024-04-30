@@ -2,7 +2,7 @@ import {React, useEffect} from 'react';
 import {Link,useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
-axios.defaults.baseURL = "https://rablo-assignment.onrender.com";
+axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL;
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -23,7 +23,8 @@ const Signup = () => {
         }
         try{
             const signupData = await axios.post('/api/register', data);
-            if(signupData.status === 200){
+            console.log(signupData);
+            if(signupData.status === 201){
                 alert('Signup successful');
                 navigate('/login');
             }

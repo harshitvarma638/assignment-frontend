@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Formatable from './Formatable';
 
-axios.defaults.baseURL = "https://rablo-assignment.onrender.com";
+axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL;
 
 function Home() {
   const [addSection, setAddSection] = useState(false);
