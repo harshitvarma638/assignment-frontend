@@ -50,6 +50,7 @@ function Home() {
     console.log(formData);
     if(formData.status === 200) {
       setAddSection(false);
+      getFetchData();
       alert('Data added successfully');
     }
   }
@@ -105,6 +106,7 @@ function Home() {
       rating: item.rating,
       company: item.company
     });
+    
     setUpdateSection(true);
   }
 
